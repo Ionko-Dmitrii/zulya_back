@@ -1,0 +1,73 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block content %}
+  <main class="purchase-history__detail">
+    <div class="breadcrumbs">
+      <div class="container">
+        <ul>
+          <li><a href="">Главная</a></li>
+          <li><a href="" class="active">Мои заказы</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <div class="purchase-history__detail-content">
+        <h1>Заказ В обработке</h1>
+        <div class="purchase-history__detail-card-all">
+          <div class="purchase-history__detail-card">
+            <div>
+              <div class="basket-product__card-inner">
+                <div class="basket-product__img">
+                  <img src="{% static 'img/jpg/img1.jpg' %}" alt="load img">
+                </div>
+                <div class="basket-product__description">
+                  <h2>jhgfvghjk</h2>
+                  <div class="characteristic">
+                    <span class="name">Артикул:</span>
+                    <span class="size">3453</span>
+                  </div>
+                  <div class="characteristic">
+                    <span class="name">Размер:</span>
+                    <span class="size">2424</span>
+                  </div>
+                  <div class="characteristic">
+                    <span class="name">Цвет:</span>
+                    <span class="size">wfewf</span>
+                  </div>
+                  <div class="characteristic">
+                    <span class="name">Количество линеек:</span>
+                    <span class="size">300</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sum">2422 с.</div>
+          </div>
+        </div>
+        <div class="purchase-history__detail-info">
+          <div class="info-row">
+            <div class="name">Получатель:</div>
+            <div class="info">dfwrfw
+              <div>wdfwf</div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="name">Адрес доставки:</div>
+            <div class="info">wrwfdwfd</div>
+          </div>
+          <div class="info-row">
+            <div class="name">Итого:</div>
+            <div class="info sum">23424c.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}
+
+{% block js %}{% endblock %}
+
+
+

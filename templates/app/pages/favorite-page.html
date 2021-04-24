@@ -1,0 +1,54 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block content %}
+  <main class="favorite-page">
+    <div class="breadcrumbs">
+      <div class="container">
+        <ul>
+          <li><a href="">Главная</a></li>
+          <li><a href="" class="active">Избранное</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <div class="category-page__right">
+        <div class="category-page__heading">
+          <h1>Избранное</h1>
+        </div>
+        <section class="bestseller">
+          <div class="favorites-model__card-all">
+            <div class="favorites-model__card">
+              <div class="favorites-model__card-inner">
+                {% include 'app/components/main-card.html' %}
+              </div>
+            </div>
+          </div>
+          {% include 'app/components/pagination.html' %}
+        </section>
+      </div>
+      <div class="empty-basket__page">
+        <h2>У вас еще нет избранных товаров</h2>
+        <div class="center">
+          <h1>Хит продаж</h1>
+          <div class="favorites-model__card-all">
+            <div class="favorites-model__card">
+              <div class="favorites-model__card-inner">
+                {% include 'app/components/main-card.html' %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}
+
+{% block js %}
+  <script>
+    $(".category-page__sort .name").click(function () {
+      $(".category-page__sort .category-page__sort-content").slideToggle()
+    });
+  </script>
+{% endblock %}
+

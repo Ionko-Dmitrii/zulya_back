@@ -1,0 +1,53 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+
+{% block title %} search-page {% endblock %}
+
+{% block content %}
+  <main class="search-page">
+    <div class="breadcrumbs">
+      <div class="container">
+        <ul>
+          <li><a href="">Главная</a></li>
+          <li><a href="" class="active">Результаты поиска</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <h2>Результаты поиска</h2>
+      <p>Найдено 6 моделей</p>
+      <div class="center">
+        <div class="favorites-model__card-all">
+          <div class="favorites-model__card">
+            <div class="favorites-model__card-inner">
+              {% include 'app/components/main-card.html' %}
+            </div>
+          </div>
+        </div>
+        {% include 'app/components/pagination.html' %}
+      </div>
+    </div>
+    <div class="container">
+      <h2>Не найдено</h2>
+      <p>Найдено 0 моделей</p>
+      <div class="line"></div>
+      <div class="center">
+        <h1 style="text-align: left">Хит продаж</h1>
+        <div class="favorites-model__card-all">
+          <div class="favorites-model__card">
+            <div class="favorites-model__card-inner">
+              {% include 'app/components/main-card.html' %}
+            </div>
+          </div>
+        </div>
+        {% include 'app/components/pagination.html' %}
+      </div>
+    </div>
+  </main>
+{% endblock %}
+
+{% block js %}{% endblock %}
+
+
+

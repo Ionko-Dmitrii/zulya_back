@@ -1,0 +1,138 @@
+
+.purchase-history__detail-content {
+
+  h1 {
+    margin: 16px 0 0 0;
+  }
+
+  .purchase-history__detail-info {
+    margin: 20px 0 0 0;
+
+    .info-row {
+      display: flex;
+      margin: 0 0 40px 0;
+
+      @media(max-width: 425px) {
+        flex-direction: column;
+      }
+
+      &:first-child {
+        margin: 0 0 20px 0;
+      }
+
+      .name {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 20px;
+        letter-spacing: 0.04em;
+        color: #7C7C7C;
+        min-width: 260px;
+
+        @media(max-width: 640px) {
+          min-width: 50%;
+        }
+
+        @media(max-width: 425px) {
+          margin: 0 0 10px 0;
+        }
+      }
+
+      .info {
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 20px;
+        letter-spacing: 0.04em;
+        color: #2B2A2A;
+
+        div {
+          margin: 12px 0 0 0;
+        }
+      }
+
+      .sum {
+        color: #AB844A;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.purchase-history__detail-card-all {
+
+  .purchase-history__detail-card {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(124, 124, 124, 0.2);
+
+    @media(max-width: 425px) {
+      flex-direction: column;
+    }
+
+    .basket-product__card-inner {
+      padding: 0;
+
+      .basket-product__img {
+        width: 156px;
+        min-width: 156px;
+        margin: 0 32px 0 0;
+
+        @media(max-width: 640px) {
+          min-width: 120px;
+          margin: 0 16px 0 0;
+        }
+
+        @media(max-width: 425px) {
+          min-width: 90px;
+          margin: 0 16px 0 0;
+        }
+      }
+
+      .basket-product__description {
+        h2 {
+          font-size: 18px;
+          margin: 0 0 20px 0;
+
+          @media(max-width: 425px) {
+             font-size: 15px;
+          }
+        }
+
+        .characteristic {
+          margin: 0 0 21px 0;
+
+          @media(max-width: 640px) {
+            margin: 0 0 10px 0;
+          }
+
+          &:last-child {
+            margin: 0;
+          }
+
+          .name, .size {
+            font-size: 16px;
+            line-height: 100%;
+
+            @media(max-width: 425px) {
+             font-size: 13px;
+          }
+          }
+        }
+      }
+    }
+
+    .sum {
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 20px;
+      letter-spacing: 0.04em;
+      color: #AB844A;
+      margin: 0 0 0 20px;
+      white-space: nowrap;
+
+       @media(max-width: 425px) {
+        margin: 20px 0 0 0;
+      }
+    }
+  }
+}

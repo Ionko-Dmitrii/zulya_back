@@ -1,0 +1,22 @@
+
+.favorite-page {
+  .category-page__right {
+    width: 100%;
+
+    .bestseller {
+      .favorites-model__card-all {
+        .favorites-model__card {
+          width: 25%;
+
+          @media(max-width: 960px) {
+            width: 33.33%;
+          }
+
+          @media(max-width: 640px) {
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+
+{% block title %} 404 {% endblock %}
+
+{% block content %}
+  <main class="error-page">
+    <section class="container">
+      <img src="{% static 'img/svg/brown-zulya.svg' %}" alt=""
+           class="brown-logo">
+      <img src="{% static 'img/svg/404.svg' %}" alt="" class="img-404">
+
+    </section>
+  </main>
+{% endblock %}
+
+{% block js %}{% endblock %}
+
+
+

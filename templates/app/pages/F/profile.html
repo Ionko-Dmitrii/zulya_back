@@ -1,0 +1,157 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+
+{% block title %} profile {% endblock %}
+
+{% block content %}
+  <main class="profile-add-code">
+    {% include 'app/components/breadcrumbs.html' %}
+    <section class="container">
+      <div class="profile-page">
+        <div class="left-side">
+          <form action="" method="post" id="update-profile-form">
+            <h1>Профиль</h1>
+            <div class="input">
+              <input type="text" name="first_name" value="" placeholder="Имя"
+                     required="required">
+              <label for="input1">Имя *</label>
+              <p>sdfghm</p>
+            </div>
+            <div class="input">
+              <input type="text" name="last_name" value="" placeholder="Фамилия"
+                     required="required">
+              <label for="input2">Фамилия *</label>
+              <p>dghfhgdsfgh</p>
+            </div>
+            <div class="input input-tel">
+              <input type="text" name="phone_number" value="" readonly
+                     placeholder="+996 ... .. ..." required="required">
+              <label for="input3">Номер телефона</label>
+              <p>wetyutj</p>
+            </div>
+            <button type="button" class="button-tel btn-change-password">
+              Изменить номер
+              <img class="img-loader" src="{% static 'img/svg/loader.svg' %}"
+                   alt="load img">
+            </button>
+            <h2>Адрес доставки</h2>
+            <div class="input">
+              <input type="text" name="country"
+                     value="" placeholder="Страна" required="required">
+              <label for="input4">Страна *</label>
+              <p>hgjkl;</p>
+            </div>
+            <div class="input">
+              <input type="text" name="city" value="" placeholder="Город"
+                     required="required">
+              <label for="input5">Город *</label>
+              <p>wdgfhgfgdf</p>
+            </div>
+            <button type="submit">Сохранить</button>
+          </form>
+        </div>
+        <div class="right-side">
+          <div class="logo">
+            <img src="{% static 'img/svg/logo-white.svg' %}" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+    {#                ============add code for change number=======#}
+    {#        TODO: добавть класс "active" что бы показать модалку#}
+    <div class="modal-change-number" id="modal-profile-change-num">
+      <div class="modal-sign-in__inner">
+        <div class="close-modal_global"></div>
+        <div class="modal-sign-in__content">
+          <div class="modal-sign-in__content-inner">
+            <div class="modal-img"></div>
+            <h2>Смена номера</h2>
+            <form action="" id="change-phone-confirm-form">
+              <div class="input">
+                <input type="text" class="masked-code"
+                       placeholder="Введите код подтверждения">
+              </div>
+              <button class="change-number__next stop-timer" type="submit">
+                Продолжить
+                <img class="img-loader" src="{% static 'img/svg/loader.svg' %}"
+                     alt="load img">
+              </button>
+              <span>Не пришло SMS сообщение?</span>
+              <div
+                class="button button-enter-code change-phone-btn-send-again-code">
+                Отправить снова <span class="timer-all timer-class"></span>
+              </div>
+              <div class="error-msg"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    {# ============change number======= #}
+    {#        TODO: добавть класс "active" что бы показать модалку#}
+    <div class="modal-change-number" id="modal-profile-add-code">
+      <div class="modal-sign-in__inner">
+        <div class="close-modal_global"></div>
+        <div class="modal-sign-in__content">
+          <div class="modal-sign-in__content-inner">
+            <div class="modal-img"></div>
+            <h2>Изменение номера телефона</h2>
+            <form action="" id="new-number-phone-form">
+              <div class="input">
+                <input required type="number" class="masked-phone phone5">
+              </div>
+              <button class="change-number__next change-nmb-btn-continue"
+                      disabled>Продолжить
+                <img class="img-loader" src="{% static 'img/svg/loader.svg' %}"
+                     alt="load img">
+              </button>
+              <div class="input">
+                <input type="text" class="masked-code" style="display: none;"
+                       placeholder="Введите код подтверждения">
+              </div>
+              <span>Не пришло SMS сообщение?</span>
+              <div
+                class="button button-enter-code change-phone-btn-send-again-code">
+                Отправить снова <span class="timer-all timer-class"></span>
+              </div>
+              <div class="save-code__button">
+                <div class="cancel cancel-change-phone-btn">Отменить</div>
+                <button type="submit">Сохранить</button>
+              </div>
+              <div class="error-msg"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    {# TODO: добавть класс "active" что бы показать модалку#}
+    <div class="modal-change-number active" id="modal-profile-success">
+      <div class="modal-sign-in__inner">
+        <div class="close-modal_global"></div>
+        <div class="modal-sign-in__content">
+          <div class="modal-sign-in__content-inner">
+            <div class="modal-img"></div>
+            <p>Ваш профиль успешно сохранен!</p>
+            <form action="">
+              <div class="but-finish">Хорошо</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}{% block js %}
+  <script src="{% static 'js_back/profile.js' %}"></script>
+  <script>
+    $(document).ready(function () {
+      var input4 = document.querySelector(".phone5");
+      window.intlTelInput(input4, {
+        separateDialCode: true,
+        preferredCountries: ["kg", "kz", "ru"],
+        utilsScript: "{% static 'libs/build/js/utils.js' %}",
+      });
+    });
+  </script>
+
+{% endblock %}

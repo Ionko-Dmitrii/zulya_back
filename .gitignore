@@ -1,0 +1,13 @@
+media
+.env/env_local
+venv
+env
+.idea
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyc
+
+templates/assets/css/style.css
+.venv/

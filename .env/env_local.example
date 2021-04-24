@@ -1,0 +1,7 @@
+DEBUG=on
+SECRET_KEY=your_secret_key
+ZULYA_PROJECT_ALLOWED_HOSTS=localhost,0.0.0.0,127.0.0.1
+ZULYA_PROJECT_DATABASE=postgres://user:password@localhost:5432/db_name
+
+TELEGRAM_TOKEN='telegram_token'
+TELEGRAM_CHAT_ID='chat_id'

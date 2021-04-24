@@ -1,0 +1,4 @@
+Django==2.2
+environ==1.0
+psycopg2==2.8.6
+django-jet==1.0.8

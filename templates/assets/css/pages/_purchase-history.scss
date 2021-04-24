@@ -1,0 +1,139 @@
+
+.purchase-history {
+  margin: 0 0 60px 0;
+}
+
+.purchase-history__content {
+  h1 {
+    font-size: 32px;
+    line-height: 32px;
+    margin: 16px 0 12px;
+  }
+}
+
+.purchase-history__card-all {
+  margin: 0 0 60px 0;
+}
+
+.purchase-history__card {
+  position: relative;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(124, 124, 124, 0.2);
+
+  &:first-child {
+    border-top: 1px solid rgba(124, 124, 124, 0.2);
+  }
+
+  a {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+
+  .purchase-history__info {
+    margin: 0 0 40px 0;
+    display: flex;
+    justify-content: space-between;
+
+    .info {
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 21px;
+      letter-spacing: 0.04em;
+      color: #2B2A2A;
+
+      @media(max-width: 640px) {
+        display: flex;
+        flex-direction: column;
+      }
+
+      span {
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 18px;
+        letter-spacing: 0.04em;
+        color: #7C7C7C;
+        margin: 0 0 0 32px;
+
+        @media(max-width: 640px) {
+          margin: 15px 0 0 0;
+        }
+      }
+    }
+
+    .date {
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 18px;
+      letter-spacing: 0.04em;
+      color: #2B2A2A;
+      margin: 0 0 0 20px;
+    }
+  }
+
+  .purchase-history__img-all {
+    display: flex;
+    justify-content: space-between;
+
+    @media(max-width: 425px) {
+      flex-direction: column;
+    }
+
+    .all-sum {
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 20px;
+      letter-spacing: 0.04em;
+      color: #AB844A;
+      align-self: flex-end;
+      white-space: nowrap;
+      margin: 0 0 0 20px;
+
+      @media(max-width: 425px) {
+        margin: 20px 0 0 0;
+        align-self: flex-start;
+      }
+    }
+  }
+
+  .purchase-history__img {
+    display: flex;
+    max-width: 555px;
+    width: 100%;
+
+    .purchase-img {
+      position: relative;
+      width: 25%;
+      margin: 0 20px 0 0;
+
+      @media(max-width: 640px) {
+        margin: 0 10px 0 0;
+      }
+
+      @media(max-width: 425px) {
+        &:last-child {
+          margin: 0;
+        }
+      }
+
+
+      &:last-child {
+        border: 1.35395px solid #E4E4E4;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        span {
+          font-weight: normal;
+          font-size: 20px;
+          line-height: 24px;
+          letter-spacing: 0.04em;
+          color: #7C7C7C;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+.breadcrumbs {
+  padding: 24px 0;
+
+  ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    a {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 13px;
+      line-height: 13px;
+      letter-spacing: 0.04em;
+      color: #2B2A2A;
+      margin-right: 14px;
+      display: flex;
+      cursor: pointer;
+
+      @media(max-width: 640px) {
+        margin-right: 5px;
+      }
+
+      &:after {
+        content: '/';
+        margin-left: 22px;
+        font-size: 13px;
+        line-height: 13px;
+
+        @media(max-width: 640px) {
+          margin-left: 7px;
+        }
+      }
+
+      &.active {
+        color: #7C7C7C;
+      }
+    }
+
+    li:nth-last-child(1) {
+      a {
+        &:after {
+          content: none;
+        }
+      }
+    }
+  }
+
+}

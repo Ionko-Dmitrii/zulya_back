@@ -1,0 +1,34 @@
+{% load static %}
+
+<div class="bestseller__card product_card">
+  <div class="card-img__all">
+    <div class="card-img">
+      <a href=""></a>
+      <img src="{% static 'img/jpg/img1.jpg' %}" alt="load img">
+      <div class="favorites-button btn_rocketPulse action-btn-cart
+       active-visible-btn">
+        Добавить в корзину
+      </div>
+      <div class="new-sticker active"></div>
+    </div>
+    <div class="sticker-favorites active"></div>
+  </div>
+  <div class="bestseller__card-description">
+    <div class="sticker-discount">78%</div>
+    <div class="sum-all">
+      <span class="sum-old">88 с.</span>
+      <span class="sum">888 с.</span>
+    </div>
+    <h3>kjlkl</h3>
+    <div class="size">Размер: 88</div>
+    <div class="color-all__scroll">
+      <div class="color-all__scroll-inner">
+        <div class="color-arrow"></div>
+        <div class="color-all">
+          <div class="color"
+               style="background-color: {{ product_color.color.color_code }}"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

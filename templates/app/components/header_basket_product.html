@@ -1,0 +1,40 @@
+{% load static %}
+<div class="basket-product__card-all">
+  <div class="basket-product__card">
+    <div class="basket-product__card-inner">
+      <div class="basket-product__img">
+        <img src="{% static 'img/jpg/img1.jpg' %}" alt="load img">
+      </div>
+      <div class="basket-product__description">
+        <h2>wer</h2>
+        <div class="characteristic">
+          <span class="name">Размер:</span>
+          <span class="size">34</span>
+        </div>
+        <div class="characteristic">
+          <span class="name">Цвет:</span>
+          <span class="size">erty</span>
+        </div>
+        <div class="characteristic">
+          <span class="name">Кол-во ед в ЛР:</span>
+          <span class="size">345</span>
+        </div>
+        <div class="sum-product">
+          <div class="number">
+            <div class="minus dec-inc"></div>
+            <div class="input-num">
+              <input type="text" min="1" max="100" class="quantity-input"
+                     value="34">
+            </div>
+            <div class="plus dec-inc"></div>
+          </div>
+          <div class="sum-all">
+            <span class="sum-old">345 с.</span>
+            <span class="sum">535 с.</span>
+          </div>
+        </div>
+      </div>
+      <div class="remove-product"></div>
+    </div>
+  </div>
+</div>

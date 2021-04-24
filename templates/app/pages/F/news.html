@@ -1,0 +1,39 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block content %}
+  <main class="news-page">
+    <div class="breadcrumbs">
+      <div class="container">
+        <ul>
+          <li><a href="">Главная</a></li>
+          <li><a href="" class="active">Новости</a></li>
+        </ul>
+      </div>
+    </div>
+    <section class="container">
+      <h1>Новости</h1>
+      <div class="grid">
+        <div class="news-card">
+          <div class="news-card__img">
+            <img src="{% static 'img/jpg/img1.jpg' %}" alt="load img">
+          </div>
+          <div class="news-card__description">
+            <div class="news-card__info">
+              <div class="date">efef</div>
+              <h3>efefe</h3>
+              <p>efefg</p>
+            </div>
+            <span>Подробнее</span>
+          </div>
+          <a href=""></a>
+        </div>
+      </div>
+      {% include 'app/components/pagination.html' %}
+    </section>
+  </main>
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}

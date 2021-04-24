@@ -1,0 +1,63 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="purchase-history">
+  <div class="breadcrumbs">
+    <div class="container">
+      <ul>
+        <li><a href="">Главная</a></li>
+        <li><a href="" class="active">Мои заказы</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container">
+    <div>
+      <div class="purchase-history__content">
+        <h1>Мои заказы</h1>
+        <div class="purchase-history__card-all">
+            <div class="purchase-history__card">
+              <div class="purchase-history__info">
+                <div class="info"> Заказ
+                    <span>В обработке</span>
+                </div>
+                <div class="date">12.14.2021</div>
+              </div>
+              <div class="purchase-history__img-all">
+                <div class="purchase-history__img">
+                    <div class="purchase-img">
+                      <img src="{% static 'img/jpg/img1.jpg' %}" alt="load img">
+                    </div>
+                    <div class="purchase-img">
+                      <span>6</span>
+                    </div>
+                </div>
+                <div class="all-sum">67c.</div>
+              </div>
+              <a href=""></a>
+            </div>
+        </div>
+      </div>
+      {% include 'app/components/pagination.html' %}
+    </div>
+    <div class="empty-basket__page">
+      <h2>У вас еще нет заказов</h2>
+      <div class="center">
+        <h1>Хит продаж</h1>
+        <div class="favorites-model__card-all">
+            <div class="favorites-model__card">
+              <div class="favorites-model__card-inner">
+                {% include 'app/components/main-card.html' %}
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+{% block js %}{% endblock %}
+
+
+

@@ -1,0 +1,48 @@
+{% load static %}
+<div class="basket-product-all">
+  <div class="basket-product__card-inner">
+    <div class="basket-product__img" style="position: relative">
+      <a href=""
+         target="_blank"
+         style="position: absolute; right: 0; bottom: 0; left: 0; top: 0;"></a>
+      <img src="{% static 'img/jpg/img1.jpg' %}" alt="load img">
+    </div>
+    <div class="basket-product__description">
+      <h2>hgfdg</h2>
+      <div class="characteristic">
+        <span class="name">Артикул:</span>
+        <span class="size">454</span>
+      </div>
+      <div class="characteristic">
+        <span class="name">Размер:</span>
+        <span class="size">54</span>
+      </div>
+      <div class="characteristic">
+        <span class="name">Цвет:</span>
+        <span class="size">dgrdgr</span>
+      </div>
+      <div class="characteristic">
+        <span class="name">Количество товара в линейке:</span>
+        <span class="size">355 ед</span>
+      </div>
+      <div class="sum-product">
+        <div class="characteristic">
+          <span class="name">Количество линеек:</span>
+          <div class="number">
+            <div class="minus dec-inc"></div>
+            <div class="input-num">
+              <input type="text" class="quantity-input" min="1" max="100"
+                     value="45">
+            </div>
+            <div class="plus dec-inc"></div>
+          </div>
+        </div>
+        <div class="sum-all">
+          <span class="sum-old">45 с.</span>
+          <span class="sum">545 с.</span>
+        </div>
+      </div>
+    </div>
+    <div class="remove-product"></div>
+  </div>
+</div>

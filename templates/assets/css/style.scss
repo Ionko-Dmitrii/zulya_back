@@ -1,0 +1,53 @@
+@import "base";
+
+//===========partials========
+
+@import "partials/header";
+@import "partials/footer";
+
+//=========pages==========
+@import "pages/index";
+@import "pages/category-page";
+@import "pages/favorite-page";
+@import "pages/collection-inner-page";
+@import "pages/collection-page";
+@import "pages/product-detail";
+@import "pages/basket-page";
+@import "pages/purchase-history";
+@import "pages/purchase-history__detail";
+
+//=========pagesFatima==========
+@import "pages/F/about-us";
+@import "pages/F/news-detail";
+@import "pages/F/news";
+@import "pages/F/delivery-information";
+@import "pages/F/404";
+@import "pages/F/profile";
+@import "pages/F/search-page";
+
+//=========components==========
+
+@import "components/breadcrumbs";
+@import "components/pagination";
+@import "components/modal-sign-in";
+@import "components/main-card";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,37 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block content %}
+  <main class="collection-page">
+    <div class="breadcrumbs">
+      <div class="container">
+        <ul>
+          <li><a href="">Главная</a></li>
+          <li><a href="" class="active">Коллекции</a></li>
+        </ul>
+      </div>
+    </div>
+    <section class="collection">
+      <div class="container">
+        <h1>Коллекции</h1>
+        <div class="favorites-model__card-all">
+            <div class="favorites-model__card">
+              <div class="favorites-model__card-inner">
+                {% include 'app/components/collection-card.html' %}
+              </div>
+            </div>
+        </div>
+        {% include 'app/components/pagination.html' %}
+      </div>
+    </section>
+  </main>
+{% endblock %}
+
+{% block js %}
+  <script>
+    $(".category-page__sort .name").click(function () {
+      $(".category-page__sort .category-page__sort-content").slideToggle()
+    });
+  </script>
+{% endblock %}
+

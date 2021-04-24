@@ -1,0 +1,119 @@
+body {
+  font-family: "HalveticaNeueCyr", sans-serif;
+  padding: 0;
+  margin: 0;
+  font-style: normal;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1096px;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  @media (max-width: 1096px) {
+    max-width: 960px;
+  }
+  @media (max-width: 960px) {
+    max-width: 640px;
+  }
+  @media (max-width: 640px) {
+    max-width: 100%;
+  }
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+input, button {
+  outline: none;
+}
+
+main {
+  max-width: 1920px;
+  margin: 67px auto 0;
+  min-height: calc(100vh - 328px);
+
+  @media(max-width: 960px) {
+    margin: 56px auto 0;
+  }
+}
+
+
+
+$grey: #7C7C7C;
+$grey2: #BDBDBD;
+$grey3: #E4E4E4;
+$white: #fffff;
+$brown: #AB844A;
+$black: #2B2A2A;
+$red: #FF6565;
+$green: #45BA77;
+
+h1 {
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: 0.04em;
+  color: #2A2A2A;
+  margin: 16px 0 20px;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+  padding: 0 15px 0 0;
+  background: rgba(0, 0, 0, 0.3);
+
+  @media(max-width: 1024px) {
+    padding: 0;
+  }
+
+  .header {
+    right: 1px;
+
+    @media(max-width: 1024px) {
+      right: 0;
+    }
+  }
+
+
+  .header .header-content .navigation, .logo-header {
+    padding: 0 14px 0 0;
+
+    @media(max-width: 1096px) {
+      padding: 0;
+    }
+  }
+}
+
+.background-hidden {
+  position: fixed;
+  z-index: 500;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+
+  &.show {
+    display: block;
+  }
+}

@@ -1,0 +1,348 @@
+
+.bestseller__card {
+  position: relative;
+  cursor: pointer;
+
+  &:hover {
+    .card-img {
+      border: 1px solid #AB844A;
+
+      .favorites-button {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  .card-img__all {
+    position: relative;
+
+    .sticker-favorites {
+      position: absolute;
+      cursor: pointer;
+      top: 8px;
+      right: 8px;
+      width: 32px;
+      height: 32px;
+      transition: .2s;
+      background: url("../img/svg/Fovarite.svg") center no-repeat;
+
+      @media(max-width: 640px) {
+        width: 24px;
+        height: 24px;
+        background-size: contain;
+      }
+
+      &.active {
+        background: url("../img/svg/Fovarite2.svg") center no-repeat;
+      }
+    }
+  }
+
+
+  .card-img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: 1s;
+
+    &:first-child {
+      position: relative;
+    }
+
+    &.active {
+      opacity: 1;
+    }
+
+    a {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: 12
+    }
+
+    .favorites-button {
+      position: absolute;
+      z-index: 30;
+      bottom: 8px;
+      left: 8px;
+      right: 8px;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 0.04em;
+      color: #2B2A2A;
+      background: #FFFFFF;
+      padding: 13px 0 15px;
+      transition: .2s;
+      transform: translateY(120%);
+
+      @media(max-width: 640px) {
+        text-align: center;
+        bottom: 4px;
+        left: 4px;
+        right: 4px;
+        font-size: 10px;
+        line-height: 100%;
+        padding: 5px 5px;
+      }
+
+      &:before {
+        content: "";
+        width: 16px;
+        height: 16px;
+        min-width: 16px;
+        margin: 0 8px 0 0;
+        background: url("../img/svg/add-basket.svg") center no-repeat;
+
+        @media(max-width: 640px) {
+          content: "";
+          width: 10px;
+          height: 10px;
+          min-width: 10px;
+          margin: 0 4px 0 0;
+          background-size: contain;
+        }
+      }
+
+      &.active-visible-btn {
+        background: #AB844A;
+        color: #FFFFFF;
+        transform: translateY(0);
+
+        &:before {
+          background: url("../img/svg/add-basket2.svg") center no-repeat;
+
+          @media(max-width: 640px) {
+          background-size: contain;
+        }
+        }
+      }
+    }
+
+
+    .new-sticker {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 36px;
+      height: 36px;
+      background: url("../img/svg/new-sticker.svg") center no-repeat;
+
+      @media(max-width: 640px) {
+        width: 30px;
+        height: 30px;
+        background-size: contain;
+      }
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+}
+
+.bestseller__card-description {
+  position: relative;
+  padding: 10px 10px 4px 0;
+
+  @media(max-width: 640px) {
+    padding: 7px 0 0 0;
+  }
+
+  .sticker-discount {
+    position: absolute;
+    top: 4px;
+    right: 0;
+    background: $red;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 16px;
+    color: #FFFFFF;
+    padding: 6px 9px 2px 10px;
+
+    @media(max-width: 640px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 14px;
+      font-size: 10px;
+      line-height: 100%;
+      padding: 0 2px;
+    }
+
+    &.active {
+      display: flex;
+    }
+  }
+
+  .sum-all {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 0 10px 0;
+    padding: 0 55px 0 0;
+
+    @media(max-width: 640px) {
+      margin: 0 0 6px 0;
+      padding: 0 35px 0 0;
+      display: flex;
+
+      .sum-old {
+        margin: 0 4px 0 0;
+      }
+
+      .sum-old, .sum {
+        font-size: 11px;
+        line-height: 100%;
+      }
+    }
+  }
+
+  h3 {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 15px;
+    letter-spacing: 0.04em;
+    color: #2A2A2A;
+    margin: 0 0 9px 0;
+
+    @media(max-width: 640px) {
+      font-size: 11px;
+      line-height: 125%;
+      margin: 0 0 4px 0;
+    }
+  }
+
+  .size {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: 0.04em;
+    color: #7C7C7C;
+    margin: 0 0 18px 0;
+
+    @media(max-width: 640px) {
+      font-size: 10px;
+      line-height: 100%;
+      margin: 0 0 8px 0;
+    }
+  }
+
+  .color-all__scroll {
+    position: relative;
+
+    @media(max-width: 640px) {
+      position: relative;
+      margin: -4px 0 0 -4px;
+      padding: 0 20px 0 0;
+
+      .color-arrow {
+        position: absolute;
+        top: 4px;
+        right: 0;
+        width: 20px;
+        height: 20px;
+        transition: .2s;
+        opacity: 1;
+        background: url("../img/svg/category-arrow.svg") center no-repeat;
+
+        &.hide {
+          opacity: 0;
+        }
+      }
+    }
+
+    .color-all__scroll-inner {
+      @media(max-width: 640px) {
+        margin: 0 10px 0 2px;
+      }
+    }
+  }
+
+  .color-all {
+    display: flex;
+    flex-wrap: wrap;
+
+    @media(max-width: 640px) {
+      padding: 4px 4px 10px 4px;
+      flex-wrap: nowrap;
+      box-sizing: border-box;
+      overflow: auto;
+    }
+
+    .color {
+      position: relative;
+      border: 3px solid #ffffff;
+      width: 8px;
+      height: 8px;
+      min-width: 8px;
+      margin: 0 12px 12px 0;
+      transition: .2s;
+      cursor: pointer;
+
+      @media(max-width: 640px) {
+        width: 14px;
+        height: 14px;
+        min-width: 14px;
+        margin: 0 4px 0 0;
+        box-shadow: 0 0 0 0 #ffffff;
+      }
+
+      &:hover {
+        &:after {
+          border: 1px solid #A4ADAC;
+        }
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border: 1px solid transparent;
+        top: -3px;
+        bottom: -3px;
+        left: -3px;
+        right: -3px;
+
+        @media(max-width: 640px) {
+          width: 18px;
+          height: 18px;
+        }
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        display: inline-block;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        box-shadow: 0 0 0 .1px #2A2A2A;
+      }
+
+      &.active {
+
+        &:after {
+          border: 1px solid #A4ADAC;
+        }
+      }
+    }
+  }
+}
+
+

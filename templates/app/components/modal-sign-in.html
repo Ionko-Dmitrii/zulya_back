@@ -1,0 +1,146 @@
+{% load static %}
+
+{# модалка входа #}
+<div class="modal-sign-in" id="modal-sign-in">
+  <div class="modal-sign-in__inner">
+    <div class="close-modal_global"></div>
+    <div class="modal-sign-in__content">
+      <div class="modal-sign-in__content-inner">
+        <div class="modal-img"></div>
+        <h2>Вход</h2>
+        <form action="" id="signInForm">
+          <div class="input">
+            <input required type="number" name="phone-number" class="phone55">
+          </div>
+          <button type="submit" class="signButton1 blockable-btn">Войти
+            <img class="img-loader" src="{% static 'img/svg/loader.svg' %}"
+                 alt="load img">
+          </button>
+          <div class="button register-button-b">Зарегестрироваться</div>
+          <div class="error-msg"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# модалка кода регистрации #}
+<div class="modal-sign-in" id="modal-enter-code-register">
+  <div class="modal-sign-in__inner">
+    <div class="close-modal_global"></div>
+    <div class="modal-sign-in__content">
+      <div class="modal-sign-in__content-inner">
+        <div class="modal-img"></div>
+        <h2>Регистрация</h2>
+        <form action=""
+              class="confirm-code-register-form">
+          <div class="input">
+            <input type="text" class="masked-code"
+                   placeholder="Введите код подтверждения">
+          </div>
+          <button type="submit" class="auth-disabled-btn">Продолжить
+            <img class="img-loader" src="{% static 'img/svg/loader.svg' %}"
+                 alt="load img">
+          </button>
+          <span>Не пришло SMS сообщение?</span>
+          <div class="button button-enter-code send-code-again-btn-register">
+            Отправить снова
+            <span class="timer-all timer-class"></span></div>
+          <div class="error-msg"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# модалка кода в #}
+
+<div class="modal-sign-in" id="modal-enter-code-signin">
+  <div class="modal-sign-in__inner">
+    <div class="close-modal_global"></div>
+    <div class="modal-sign-in__content">
+      <div class="modal-sign-in__content-inner">
+        <div class="modal-img"></div>
+        <h2>Вход</h2>
+        <form action="" id="confirm-sign-in-form">
+          <div class="input">
+            <input type="text" class="masked-code"
+                   placeholder="Введите код подтверждения">
+          </div>
+          <button type="submit" class="auth-disabled-btn">Продолжить
+            <img class="img-loader" src="{% static 'img/svg/loader.svg' %}"
+                 alt="load img">
+          </button>
+          <span>Не пришло SMS сообщение?</span>
+          <div class="button button-enter-code send-code-again-btn-login">
+            Отправить снова
+            <span class="timer-all timer-class"></span>
+          </div>
+          <div class="error-msg"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# модалка регистрации - 1 шаг #}
+<div class="modal-sign-in" id="modal-registration">
+  <div class="modal-sign-in__inner">
+    <div class="close-modal_global"></div>
+    <div class="modal-sign-in__content">
+      <div class="modal-sign-in__content-inner">
+        <div class="modal-img"></div>
+        <h2>Регистрация</h2>
+        <form action="" id="register-first-form">
+          <div>
+            <div class="input-reg">
+              <div class="name">Ваше имя</div>
+              <input type="text" required name="first-name"
+                     placeholder="Имя">
+            </div>
+            <div class="input-reg">
+              <div class="name">Ваша фамилия</div>
+              <input type="text" required name="last-name"
+                     placeholder="Фамилия">
+            </div>
+            <div class="input-reg">
+              <div class="name">Номер телефона</div>
+              <input type="number" required name="phone-number"
+                     class="phone5555">
+            </div>
+          </div>
+          <div class="checkbox input-reg">
+            <input name="terms" class="terms" required
+                   type="checkbox" id="checkbox">
+            <label for="checkbox"></label>
+            <a href="" target="_blank">Согласен с условиями публичной оферты</a>
+          </div>
+          <button class="button-form__disabled" type="submit"
+                  id="register-start-btn-b">Продолжить
+            <img class="img-loader" src="{% static 'img/svg/loader.svg' %}"
+                 alt="load img">
+          </button>
+          <div class="error-msg"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# финальная модалка успешной регистрации #}
+<div class="modal-sign-in" id="registration-success">
+  <div class="modal-sign-in__inner">
+    <div class="close-modal_global"></div>
+    <div class="modal-sign-in__content">
+      <div class="modal-sign-in__content-inner">
+        <div class="modal-img"></div>
+        <p>Поздравляем! Регистрация прошла успешно!</p>
+        <form action="">
+          <div class="but-finish finish-registration-btn">Хорошо</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+

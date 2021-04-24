@@ -1,0 +1,225 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="basket-page">
+  <div class="breadcrumbs">
+    <div class="container">
+      <ul>
+        <li><a href="">Главная</a></li>
+        <li><a href="" class="active">Корзина</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="subscribe-modal hide">
+    <div class="modal-content">
+      <div class="modal-content__logo"></div>
+      <p id="modal-text">Поздравляем! Ваш заказ успешно оформлен. В
+        ближайшее время мы обязательно свяжемся с вами!
+      </p>
+      <div class="close-modal">Хорошо</div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="basket-page__content">
+      <div class="basket-page-left">
+
+        <div class="ordering-basket show">
+          <h1>Оформление заказа</h1>
+          <h3>Адрес доставки</h3>
+          <div class="info">wqertyh</div>
+          <div class="info-all">
+            <div class="info">sdfgh</div>
+            <div class="info">г.qwer</div>
+          </div>
+          <div class="ordering-but">Редактировать</div>
+        </div>
+        <div
+          class="ordering-basket-form show">
+          <h1>Оформление заказа</h1>
+          <form action="" method="post" id="personal-info-form">
+            <div class="form-row">
+              <div class="input input-validate">
+                <div class="name">Ваше имя*</div>
+                <input type="text" required value="ghjk" name="name"
+                       placeholder="Александр">
+              </div>
+              <div class="input input-validate">
+                <div class="name">Ваша фамилия*
+                </div>
+                <input type="text" required value="jkl" name="surname"
+                       placeholder="Пушкин">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="input input-validate">
+                <div class="name">Номер телефона*
+                </div>
+                <input type="text" style="padding-left: 90px" required
+                       class="phone-basket testValid" value="hjkl" name="phone">
+              </div>
+              <div class="input input-validate">
+                <div class="name">Страна*</div>
+                <input type="text" required value="ghjkl" name="country"
+                       placeholder="Кыргызстан">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="input input-validate">
+                <div class="name">Город*</div>
+                <input type="text" required value="ghjkl" name="city"
+                       placeholder="Бишкек">
+              </div>
+              <div class="input">
+                <button class="hide-form" type="submit">Сохранить адрес</button>
+              </div>
+            </div>
+          </form>
+          <form action="" method="post" id="personal-info-form">
+            <div class="form-row">
+              <div class="input input-validate">
+                <div class="name">Ваше имя*</div>
+                <input type="text" required value="bhjk" name="name"
+                       placeholder="Александр">
+              </div>
+              <div class="input input-validate">
+                <div class="name">Ваша фамилия*</div>
+                <input type="text" required value="ghj" name="surname"
+                       placeholder="Пушкин">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="input input-validate">
+                <div class="name">Номер телефона*
+                </div>
+                <input type="text" style="padding-left: 90px" required
+                       class="phone-basket testValid" value="4567890"
+                       name="phone">
+              </div>
+              <div class="input input-validate">
+                <div class="name">Страна*</div>
+                <input type="text" required value="bhjkl" name="country"
+                       placeholder="Кыргызстан">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="input input-validate">
+                <div class="name">Город*</div>
+                <input type="text" required value="hjkl;" name="city"
+                       placeholder="Бишкек">
+              </div>
+              <div class="input">
+                <button class="hide-form" type="submit">Сохранить адрес</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="basket-heading"><h2>Состав заказа</h2></div>
+        <div class="all-basket-product">
+          {% include 'app/components/basket_product.html' %}
+        </div>
+      </div>
+      <div class="basket-page-right">
+        <div class="basket-page__total">
+          <h3>Сумма заказа</h3>
+          <div class="total-info">
+            <div>
+              <div class="name">Общая сумма</div>
+              <div class="sum basket-total-price">6789c.</div>
+            </div>
+            <div>
+              <div class="name">Скидка</div>
+              <div
+                class="sum basket-discount-price">6789c.
+              </div>
+            </div>
+            <div>
+              <div class="name">Итого</div>
+              <div class="sum basket-sale-price">678c.
+              </div>
+            </div>
+          </div>
+          <div class="total-but">
+            <a id="order-btn" href="{% url 'basket_checkout_ajax' %}">
+              Оформить заказ
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="empty-basket__page">
+      <h2>Ваша корзина пуста</h2>
+      <div class="center">
+        <h1>Хит продаж</h1>
+        <div class="favorites-model__card-all">
+          <div class="favorites-model__card">
+            <div class="favorites-model__card-inner">
+              {% include 'app/components/main-card.html' %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+{% block js %}
+  <script>
+
+    {#=================edit personal data===================#}
+
+    $(".ordering-but").click(function () {
+      $(this).closest(".ordering-basket").removeClass("show");
+      $(".ordering-basket-form").addClass("show")
+    })
+
+    {#===================validation-form================#}
+
+    $(document).ready(function () {
+      var inputSelector = '.input-validate :input';
+
+      function checkForm() {
+        var isValidForm = true;
+        $(this.form).find(inputSelector).each(function () {
+          if (!this.value.trim()) {
+            isValidForm = false;
+          }
+        });
+
+        $(this.form).find('.hide-form').prop('disabled', !isValidForm);
+        return isValidForm;
+      }
+
+      $('.hide-form').closest('form').submit(function () {
+        return checkForm.apply($(this).find(':input')[0]);
+      }).find(inputSelector).keyup(checkForm).keyup();
+
+    })
+
+    $('#personal-info-form').submit(function (e) {
+      var ph_code = $(this).find('.iti__selected-dial-code').text();
+      var phoneCont = $('.phone-basket')
+      phoneCont.val(ph_code + phoneCont.val())
+    })
+
+    var inputBasket = document.querySelector(".phone-basket");
+    window.intlTelInput(inputBasket, {
+      separateDialCode: true,
+      preferredCountries: ["kg", "kz", "ru"],
+      utilsScript: "{% static 'libs/build/js/utils.js' %}",
+
+    })
+
+    var z = $(".testValid");
+    z.on("keyup keypress", function () {
+      var phoneno = /^[\ 0-9]*$/g;
+      var testText = $(this).val();
+      if (!$(this).val().match(phoneno)) {
+        $(this).val(testText.substring(0, testText.length - 1))
+      }
+    })
+
+  </script>
+{% endblock %}

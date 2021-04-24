@@ -1,0 +1,19 @@
+.error-page {
+  padding: 58px 0 140px 0;
+  @media (max-width: 560px){
+    padding: 58px 0 80px 0;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .brown-logo {
+      margin-bottom: 50px;
+      max-width: 416px;
+    }
+    .img-404 {
+      max-width: 760px;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block content %}
+  <main class="about-us">
+    <div class="breadcrumbs">
+      <div class="container">
+        <ul>
+          <li><a href="">Главная</a></li>
+          <li><a href="" class="active">О нас</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <h1>О нас</h1>
+      <div class="picture">
+        <img src="{% static 'img/png/pic.png' %}" alt="О нас">
+        <img src="{% static 'img/svg/logo-white.svg' %}" alt="ZULYA"
+             class="logo-position">
+      </div>
+      <div class="info">
+        <div class="img">
+          <img src="{% static 'img/png/pic1.png' %}" alt="О нас">
+        </div>
+        <div class="description first-description">jhjkjlk;</div>
+      </div>
+      <div class="info">
+        <div class="description">bnmj,</div>
+        <div class="img last-img">
+            <img src="{% static 'img/png/pic2.png' %}" alt="О нас">
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}
+
+{% block js %}{% endblock %}
+

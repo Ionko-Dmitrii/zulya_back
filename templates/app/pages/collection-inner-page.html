@@ -1,0 +1,54 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block content %}
+  <main class="favorite-page">
+    <div class="breadcrumbs">
+      <div class="container">
+        <ul>
+          <li><a href="">Главная</a></li>
+          <li><a href="">Коллекции</a></li>
+          <li><a href="" class="active">fgh</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <div class="category-page__right">
+        <div class="category-page__heading">
+          <h1>rtyuio</h1>
+          <div class="category-page__sort">
+            <div class="name">Сортировать по</div>
+            <div class="category-page__sort-content">
+              <ul>
+                <li><a href="">По алфавиту</a></li>
+                <li><a href="">По цене (высокая > низкая)</a>
+                </li>
+                <li><a href="">По цене (низкая > высокая)</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <section class="bestseller">
+          <div class="favorites-model__card-all">
+            <div class="favorites-model__card">
+              <div class="favorites-model__card-inner">
+                {% include 'app/components/main-card.html' %}
+              </div>
+            </div>
+          </div>
+          {% include 'app/components/pagination.html' %}
+        </section>
+      </div>
+    </div>
+  </main>
+{% endblock %}
+
+{% block js %}
+  <script>
+    $(".category-page__sort .name").click(function () {
+      $(".category-page__sort .category-page__sort-content").slideToggle()
+    });
+  </script>
+{% endblock %}
+

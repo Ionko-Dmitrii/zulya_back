@@ -1,0 +1,120 @@
+{% load static %}
+
+<header class="header" id="header" data-headroom data-tolerance="5"
+        data-offset="205">
+  <div class="search-block">
+    <div class="search-input">
+      <form action="#" method="GET">
+        <input type="text" name="search" placeholder="Искать">
+        <div class="search-but"></div>
+      </form>
+    </div>
+  </div>
+  {#    =============mobile menu=============#}
+  <div class="header-content__mobile">
+    <div class="mobile-nav">
+      <div class="menu-hamburger">
+        <div class="menu-hamburger__icon">
+          <div class="icon-hamburger">
+            <span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+      <div class="logo-header">
+        <a href="#">
+          <img src="{% static 'img/svg/logo.svg' %}" alt="load img">
+        </a>
+      </div>
+      <div class="mobile-menu-icon">
+        <a class="header-search"></a>
+        <span class="header-basket"></span>
+      </div>
+    </div>
+    <div class="mobile-content">
+      <div class="navigation-mobile">
+        <ul>
+          <li><a href="#">Товары</a></li>
+          <li><a href="#">О нас</a></li>
+          <li><a href="#">Новости</a></li>
+          <li><a href="#">fghj</a></li>
+          <li><a href="#">Избранное</a></li>
+        </ul>
+        <div class="header-profile">
+          <span>Профиль</span>
+          <div class="header-profile__content">
+            <div class="profile__content">
+              <a href="#">Мои заказы</a>
+              <a href="#">Профиль</a>
+              <a href="#" class="logout-btn">Выйти</a>
+            </div>
+          </div>
+        </div>
+        <div class="open-modal-profile show">
+          <span>Войти</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  {#    =============desctop menu============#}
+  <div class="header-content">
+    <div class="navigation">
+      <div class="logo-header">
+        <a href="#">
+          <img src="{% static 'img/svg/logo.svg' %}" alt="load img">
+        </a>
+      </div>
+      <div class="nav">
+        <ul>
+          <li><a href="" class="active">Товары</a></li>
+          <li><a href="">О нас</a></li>
+          <li><a href="">Новости</a></li>
+          <li><a href="">sdf</a></li>
+        </ul>
+      </div>
+      <div class="header-button">
+        <div class="header-search"><a>Поиск</a></div>
+        <div class="header-favorites"><a href="#">Избранное</a></div>
+        <div class="header-profile">
+          <span>Профиль</span>
+          <div class="header-profile__content">
+            <div class="profile__content">
+              <a href="#">Мои заказы</a>
+              <a href="#">Профиль</a>
+              <a href="#" class="logout-btn">Выйти</a>
+            </div>
+          </div>
+        </div>
+        <div class="open-modal-profile show">
+          <span>Войти</span>
+        </div>
+        <div class="header-basket">
+          <span>Корзина</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="basket-menu">
+    <div class="basket-menu__content">
+      <div class="basket-menu__content-inner">
+        <div id="header_basket">
+          {% include 'app/components/header_basket_product.html' %}
+        </div>
+        <div class="basket-menu__total">
+          <div class="sum-total">
+            <span class="name">Всего товаров :</span>
+            <span
+              class="num quantity">34</span>
+          </div>
+          <div class="sum-total">
+            <span class="name">Итого:</span>
+            <span class="num header-total-sale-price">4354 c.</span>
+          </div>
+          <a href="#">Перейти в корзину</a>
+          <div class="basket-but">Продолжить покупки</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+

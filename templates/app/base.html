@@ -1,0 +1,148 @@
+{% load  static %}
+{% spaceless %}
+    <!doctype html>
+    <html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="shortcut icon" href="{% static 'img/svg/favicon.svg' %}"/>
+        <link rel="stylesheet"
+              href="{% static 'libs/build/css/intlTelInput.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet"
+              href="{% static 'libs/owl_carousel2/owl.carousel.min.css' %}">
+        <link rel="stylesheet"
+              href="{% static 'fonts/HalveticaNeueCyr/stylesheet.css' %}">
+        <link rel="stylesheet"
+              href="{% static 'fonts/Cormorant/stylesheet.css' %}">
+        <link rel="stylesheet" href="{% static 'css/fly.min.css' %}">
+        {% block seo_tag %}
+
+        {% endblock %}
+        <script>
+            const getCookie = function (name) {
+                let matches = document.cookie.match(new RegExp(
+                    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+                ));
+                return matches ? decodeURIComponent(matches[1]) : undefined // s if r == 2 else b тернарный оператор
+            };
+        </script>
+        <style>
+            .bestseller__card .card-img.active {
+                opacity: 1;
+                z-index: 10;
+            }
+
+            .bestseller__card .card-img__all .sticker-favorites {
+                z-index: 15;
+            }
+
+
+            @media (max-width: 640px) {
+                .bestseller__card .card-img .favorites-button {
+                    transform: translateY(0) !important;
+                }
+
+                .bestseller__card .card-img .favorites-button {
+                    padding: 12px 5px;
+                }
+            }
+
+            .headroom {
+                will-change: transform;
+                transition: transform 200ms linear;
+                position: fixed;
+                top: 0;
+                right: 0;
+                left: 0;
+            }
+
+            *{
+                -webkit-touch-callout:none;
+                -webkit-user-select:none;
+                -khtml-user-select:none;
+                -moz-user-select:none;
+                -ms-user-select:none;
+                user-select:none;
+                -webkit-tap-highlight-color:rgba(0,0,0,0);
+            }
+
+            .headroom--pinned {
+                transform: translateY(0%);
+            }
+
+            .headroom--unpinned {
+                transform: translateY(-100%);
+            }
+        </style>
+    </head>
+    <body>
+    <div class="background-hidden"></div>
+    {% include 'app/components/modal-sign-in.html' %}
+
+    {% include 'app/partials/header.html' %}
+
+    {% block content %}
+
+    {% endblock %}
+
+    {% include 'app/partials/footer.html' %}
+
+    <script src="{% static 'js_front/jquery-2.2.4.js' %}"></script>
+    <script src="{% static 'js_front/jquery.maskedinput.min.js' %}"></script>
+    <script src="{% static 'libs/owl_carousel2/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'libs/zoomer.js' %}"></script>
+    <script src="{% static 'libs/build/js/intlTelInput.js' %}"></script>
+    <script src="{% static 'js_front/main.js' %}"></script>
+    <script src="{% static 'js_front/fly.min.js' %}"></script>
+    <script src="{% static 'js_front/headroom.js' %}"></script>
+    <script>
+        (function () {
+            var header = new Headroom(document.querySelector("#header"), {
+                tolerance: 5,
+                offset: 205,
+                classes: {
+                    initial: "headroom",
+                    pinned: "headroom--pinned",
+                    unpinned: "headroom--unpinned"
+                }
+            });
+            header.init();
+        }());
+    </script>
+    <script>
+
+        $(document).ready(function () {
+            var input = document.querySelector(".phone55");
+            window.intlTelInput(input, {
+                separateDialCode: true,
+                preferredCountries: ["kg", "kz", "ru"],
+                utilsScript: "{% static 'libs/build/js/utils.js' %}",
+            });
+
+            var input3 = document.querySelector(".phone5555");
+            window.intlTelInput(input3, {
+                separateDialCode: true,
+                preferredCountries: ["kg", "kz", "ru"],
+                utilsScript: "{% static 'libs/build/js/utils.js' %}",
+            });
+
+        })
+
+    </script>
+    {% block js %}
+    {% endblock %}
+
+    <script>
+        $(document).ready(function () {
+            jQuery(function ($) {
+                $(".masked-code").mask("999999");
+            });
+        })
+    </script>
+    <script src="{% static 'js_front/confirm_counter.js' %}"></script>
+    </body>
+    </html>
+{% endspaceless %}

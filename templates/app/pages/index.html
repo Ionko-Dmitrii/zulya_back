@@ -1,0 +1,184 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block content %}
+  <main class="main">
+    <section class="main-slider">
+      <div class="owl-carousel main-banner">
+        <div>
+          <div class="main-slider__img">
+            <img src="{% static 'img/jpg/img1.jpg' %}" alt="load img">
+            <div class="main-banner__description">
+              <h2>sdfedf</h2>
+              <a href="#">bghjkl</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="favorites-model">
+      <div class="container">
+        <div class="favorites-model__card-all">
+          <div class="favorites-model__card">
+            <div class="favorites-model__card-inner">
+              {% include 'app/components/collection-card.html' %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bestseller">
+      <div class="container">
+        <h2>Хит продаж</h2>
+        <div class="favorites-model__card-all products_wrapper_back">
+          <div class="favorites-model__card">
+            <div class="favorites-model__card-inner">
+              {% include 'app/components/main-card.html' %}
+            </div>
+          </div>
+        </div>
+        <div class="show-all">
+          <a href="#" class="main_page_show_more_back">Смотреть еще</a>
+        </div>
+      </div>
+    </section>
+    <section class="bestseller">
+      <div class="container">
+        <h2>Новинки</h2>
+        <div class="favorites-model__card-all products_wrapper_back">
+          <div class="favorites-model__card">
+            <div class="favorites-model__card-inner">
+              {% include 'app/components/main-card.html' %}
+            </div>
+          </div>
+        </div>
+        <div class="show-all">
+          <a href="#" class="main_page_show_more_back">Смотреть еще</a>
+        </div>
+      </div>
+    </section>
+    <section class="collection">
+      <div class="container">
+        <h2>Коллекции</h2>
+        <div class="favorites-model__card-all">
+          <div class="favorites-model__card">
+            <div class="favorites-model__card-inner">
+              {% include 'app/components/collection-card.html' %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="subscribe">
+      <div class="container">
+        <div class="subscribe__content">
+          <div class="subscribe__left">
+            <div class="subscribe__left-img">
+              <img src="{% static 'img/jpg/subs.jpg' %}" alt="load img">
+            </div>
+          </div>
+          <div class="subscribe__right">
+            <div class="subscribe__right-content">
+              <h2>dfghjk</h2>
+              <p>fghjkl</p>
+              <div class="subscribe__form">
+                <form action="" method="POST">
+                  <div class="input">
+                    <input type="text" name="name" placeholder="Ваше Ф.И.О. *"
+                           required>
+                    <label for="name">Имя*</label>
+                  </div>
+                  <div class="input">
+                    <input type="number" name="phone_number" class="phone555"
+                           required>
+                    <label for="phone_number">WhatsApp номер*</label>
+                  </div>
+                  <select id="selectbox1" name="category">
+                    <option value="">Выбор кетегории *
+                    </option>
+                    <option value="">ghjkl</option>
+                  </select>
+                  <button type="submit">Подписаться</button>
+                </form>
+              </div>
+              <p class="error-message"
+                 style="color: #ff0000; display: none;"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {#            ============= добавь класс hide что-бы скрыть модалку==========#}
+      <div class="subscribe-modal hide">
+        <div class="modal-content">
+          <div class="modal-content__logo"></div>
+          <p>Спасибо что подписались!</p>
+          <div class="close-modal">Хорошо</div>
+        </div>
+      </div>
+    </section>
+    <section class="our-advantages">
+      <div class="container">
+        <h2>Наши преимущества</h2>
+        <div class="favorites-model__card-all">
+          <div class="favorites-model__card">
+            <div class="favorites-model__card-inner">
+              <div class="our-advantages__card">
+                <div class="our-advantages-img">
+                  <img src="{% static 'img/jpg/img1.jpg' %}" alt="load img">
+                </div>
+                <h3>ghjkl</h3>
+                <p>fghjk</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="news">
+      <div class="container">
+        <h2>Новости</h2>
+        <div class="favorites-model__card-all">
+          <div class="favorites-model__card">
+            <div class="favorites-model__card-inner">
+              <div class="news-card">
+                <div class="news-card__img">
+                  <img src="{% static 'img/jpg/img1.jpg' %}" alt="load img">
+                </div>
+                <div class="news-card__description">
+                  <div class="news-card__info">
+                    <div class="date">12.12.2021</div>
+                    <h3>dcfvbgfd</h3>
+                    <p>vghjkl</p>
+                  </div>
+                  <span>Подробнее</span>
+                </div>
+                <a href=""></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock %}
+
+{% block js %}
+  <script>
+    $(document).ready(function () {
+      $(".main-banner").owlCarousel({
+        items: 1,
+        loop: true,
+
+      });
+
+      var input2 = document.querySelector(".phone555");
+      window.intlTelInput(input2, {
+        separateDialCode: true,
+        preferredCountries: ["kg", "kz", "ru"],
+        utilsScript: "{% static 'libs/build/js/utils.js' %}",
+      });
+    });
+
+  </script>
+{% endblock %}
+

@@ -1,0 +1,117 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="category-page">
+  <div class="breadcrumbs">
+    <div class="container">
+      <ul>
+        <li><a href="">Главная</a></li>
+        <li><a href="">Товары</a></li>
+        <li><a href="" class="active">ghj</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container">
+    <div class="category-page__content">
+      <div class="category-page__filter">
+        <div class="filter-link">
+          <h3>Категории</h3>
+          <ul class="filter-category__dropdown">
+            {#TODO: добавить классы "active active-show active-category"#}
+            <li><a href="" class="but-drop">ролд</a>
+              <div class="category-arrow"></div>
+              <ul class="filter-category__inner active-show">
+                <li><a href="" class="but-drop__inner">bhnjmk,l</a>
+                  <div class="category-arrow__inner"></div>
+                  <ul
+                    class="filter-category__inner-inner">
+                    <li>
+                      <a href="" class="active-category">mmmmmm</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="category-page__right">
+        <div class="category-page__heading">
+          <h1>Все товары</h1>
+          <div class="category-page__sort">
+            <div class="name">Сортировать по</div>
+            <div class="category-page__sort-content">
+              <ul>
+                <li><a href="" class="active">По обновлению</a></li>
+                <li><a href="">По алфавиту</a></li>
+                <li><a href="">По цене (высокая > низкая)</a></li>
+                <li><a href="">По цене (низкая > высокая)</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <section class="bestseller">
+          <div class="favorites-model__card-all">
+              <div class="favorites-model__card">
+                <div class="favorites-model__card-inner">
+                  {% include 'app/components/main-card.html' %}
+                </div>
+              </div>
+          </div>
+            {% include 'app/components/pagination.html' %}
+        </section>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+{% block js %}
+  <script>
+    $(document).ready(function () {
+      $(".category-page__sort .name").click(function () {
+        $(".category-page__sort .category-page__sort-content").slideToggle()
+      });
+
+      $(".filter-link h3").click(function () {
+        $(".filter-link .filter-category__dropdown").slideToggle();
+        $(this).toggleClass("active")
+      });
+
+      {#================dropdown category================#}
+
+      $(".filter-category__dropdown .but-drop").siblings(".category-arrow").click(function () {
+
+        if ($(this).siblings(".but-drop").hasClass("active-show")) {
+          $(".filter-category__dropdown .but-drop").removeClass("active-show");
+          $(".filter-category__inner").slideUp(200);
+          $(".filter-category__inner").removeClass("active-show")
+          $(".filter-category__dropdown .but-drop__inner").removeClass("active-show");
+          $(".filter-category__inner-inner").slideUp(200);
+          $(".filter-category__inner-inner").removeClass("active-show")
+        } else {
+          $(".filter-category__dropdown .but-drop").removeClass("active-show");
+          $(".filter-category__inner").slideUp(200);
+          $(this).siblings(".but-drop").addClass("active-show");
+          $(this).siblings(".filter-category__inner").slideDown(200)
+        }
+      })
+
+      $(".filter-category__dropdown .but-drop__inner").siblings(".category-arrow__inner").click(function () {
+
+        if ($(this).siblings(".but-drop__inner").hasClass("active-show")) {
+          $(".filter-category__dropdown .but-drop__inner").removeClass("active-show");
+          $(".filter-category__inner-inner").slideUp(200);
+          $(".filter-category__inner-inner").removeClass("active-show");
+        } else {
+          $(".filter-category__dropdown .but-drop__inner").removeClass("active-show");
+          $(".filter-category__inner-inner").slideUp(200);
+          $(".filter-category__inner-inner").removeClass("active-show");
+          $(this).siblings(".but-drop__inner").addClass("active-show");
+          $(this).siblings(".filter-category__inner-inner").slideDown(200)
+        }
+      })
+    })
+  </script>
+{% endblock %}

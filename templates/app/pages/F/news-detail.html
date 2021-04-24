@@ -1,0 +1,50 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block content %}
+  <main class="news-detail">
+    <div class="breadcrumbs">
+      <div class="container">
+        <ul>
+          <li><a href="">Главная</a></li>
+          <li><a href="" class="active">{{ news.title }}</a></li>
+        </ul>
+      </div>
+    </div>
+    <section class="container">
+      <div class="flex">
+        <div class="img">
+          <img src="{% static 'img/jpg/img1.jpg' %}" alt="">
+        </div>
+        <div class="info">
+          <span class="date">12.12.2000</span>
+          <h2>{wsdfwf</h2>
+          <div class="description">vghjkl;'</div>
+        </div>
+      </div>
+      <div class="another-news">
+        <h1>Другие новости</h1>
+        <div class="grid">
+          <div class="news-card">
+            <div class="news-card__img">
+              <img src="{% static 'img/jpg/img1.jpg' %}" alt="load img">
+            </div>
+            <div class="news-card__description">
+              <div class="news-card__info">
+                <div class="date">12.12.2000</div>
+                <h3>ghjk</h3>
+                <p>hgjhbkjnlkm</p>
+              </div>
+              <span>Подробнее</span>
+            </div>
+            <a href=""></a>
+          </div>
+        </div>
+        <a href="" class="btn">Все новости</a>
+      </div>
+    </section>
+  </main>
+{% endblock %}
+
+{% block js %}{% endblock %}
+
